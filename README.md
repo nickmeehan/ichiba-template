@@ -1,6 +1,6 @@
 # Claude Code Plugin Marketplace Template
 
-A shared repository where your team can publish, discover, and install Claude Code plugins — so everyone benefits from the best tools and workflows instead of reinventing them.
+A template for creating your own Claude Code plugin marketplace — a shared repository where people can publish, discover, and install plugins.
 
 ## Quick Start
 
@@ -9,7 +9,7 @@ A shared repository where your team can publish, discover, and install Claude Co
 3. Update `.claude-plugin/marketplace.json` with your name, org, and description
 4. Start creating plugins with `/new-plugin`
 
-That's it — you've got a working marketplace. Your team can now install plugins directly from it.
+That's it — you've got a working marketplace. People can now install plugins directly from it.
 
 ## What's Included
 
@@ -48,11 +48,11 @@ After creating your repository from this template, update the following:
 - [ ] Update or replace the `LICENSE` for your needs
 - [ ] Delete this checklist once done
 
-## For Teams
+## Why a Marketplace?
 
-Good tooling compounds. When one person builds a useful plugin, everyone on the team should be able to use it. A shared marketplace makes that happen — no Slack messages asking "hey can you share that script?", no copy-pasting between repos, no reinventing what someone already built last quarter.
+A marketplace gives your plugins a home. Instead of scattering useful tools across repos, gists, and Slack threads, people can find and install them from one place.
 
-As people contribute, the marketplace gets better. Conventions get codified. Best practices spread naturally. And new team members get productive faster because the tools are already there.
+For teams, this means less duplication and faster onboarding — shared conventions and workflows are already packaged up and ready to use. For the broader community, it's a straightforward way to distribute plugins that others can discover and install.
 
 ## Links
 
@@ -61,7 +61,7 @@ As people contribute, the marketplace gets better. Conventions get codified. Bes
 
 ## Acknowledgments
 
-This marketplace was built using the [ichiba-template](https://github.com/nickmeehan/ichiba-template) by Nick Meehan, based on the [ichiba](https://github.com/nickmeehan/ichiba) project.
+This marketplace was built using [ichiba-template](https://github.com/nickmeehan/ichiba-template), based on the [ichiba](https://github.com/nickmeehan/ichiba) project.
 
 ## License
 
