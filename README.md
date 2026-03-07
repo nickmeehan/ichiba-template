@@ -50,9 +50,9 @@ After creating your repository from this template, update the following:
 
 ## Why a Marketplace?
 
-A marketplace gives your plugins a home. Instead of scattering useful tools across repos, gists, and Slack threads, people can find and install them from one place.
+Without a marketplace, sharing skills, agents, and commands means manually downloading files and dropping them into the right directories. A marketplace handles distribution — people can browse what's available and install with a single command instead of wrangling files by hand.
 
-For teams, this means less duplication and faster onboarding — shared conventions and workflows are already packaged up and ready to use. For the broader community, it's a straightforward way to distribute plugins that others can discover and install.
+For teams, this also means less duplication and faster onboarding. Shared conventions and workflows are already packaged up and ready to use.
 
 ## Links
 
