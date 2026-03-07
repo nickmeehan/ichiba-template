@@ -69,7 +69,8 @@ $description
 ## Installation
 
 \`\`\`bash
-/plugin install $name@nickmeehan/ichiba
+# TODO: Update YOUR-ORG/YOUR-MARKETPLACE to match your repository
+/plugin install $name@YOUR-ORG/YOUR-MARKETPLACE
 \`\`\`
 
 ## Components
@@ -361,11 +362,13 @@ main() {
         exit 1
     fi
 
-    # Get author name (default to nickmeehan)
+    # Get author name
     if [ -z "$3" ]; then
-        DEFAULT_AUTHOR="nickmeehan"
-        read -p "Enter author name [$DEFAULT_AUTHOR]: " PLUGIN_AUTHOR
-        PLUGIN_AUTHOR="${PLUGIN_AUTHOR:-$DEFAULT_AUTHOR}"
+        read -p "Enter author name: " PLUGIN_AUTHOR
+        if [ -z "$PLUGIN_AUTHOR" ]; then
+            print_error "Author name is required"
+            exit 1
+        fi
     else
         PLUGIN_AUTHOR="$3"
     fi

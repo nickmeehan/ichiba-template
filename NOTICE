@@ -1,4 +1,4 @@
-Ichiba - Claude Code Plugin Marketplace
+Claude Code Plugin Marketplace Template
 Copyright 2025 Nick Meehan
 
 ================================================================================
@@ -17,8 +17,5 @@ In plain English: You can use these plugins to build amazing things (even for pr
 but you can't turn around and sell the plugin files themselves or wrap them in a thin
 service layer and charge for access to them.
 
-If you remix, fork, or redistribute these plugins, giving credit helps others discover
-the original project. While not required by the license, attribution is appreciated and
-keeps the ecosystem growing!
-
-Questions? Open an issue at: https://github.com/nickmeehan/ichiba
+Note: This license covers the template infrastructure. You should choose an appropriate
+license for your own marketplace and the plugins you create.

@@ -1,8 +1,8 @@
 {
-  "name": "ichiba",
-  "description": "Public Claude Code plugin marketplace for sharing useful development plugins and demonstrating best practices",
+  "name": "my-marketplace",
+  "description": "A Claude Code plugin marketplace for sharing and distributing plugins",
   "version": "1.0.0",
-  "author": "nickmeehan",
-  "repository": "nickmeehan/ichiba",
+  "author": "your-name-or-org",
+  "repository": "your-org/your-marketplace",
   "plugins": []
 }
