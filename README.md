@@ -66,4 +66,6 @@ A plugin marketplace helps teams:
 
 ## License
 
-Apache 2.0 with Commons Clause — see [LICENSE](./LICENSE) and [NOTICE](./NOTICE) for details. You should choose the license that best fits your marketplace.
+The template infrastructure (generator script, skill authoring guide, commands, and scaffolding) is licensed under Apache 2.0 with Commons Clause — see [LICENSE](./LICENSE) and [NOTICE](./NOTICE) for details.
+
+**Your plugins and content are yours.** Any plugins you create, documentation you write, and customizations you make are your own work — license them however you want.
