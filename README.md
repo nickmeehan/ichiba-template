@@ -14,7 +14,7 @@ A template for creating your own Claude Code plugin marketplace — a shared rep
 This template comes with built-in tooling to get you productive immediately:
 
 - **Plugin generator script** (`bin/generate-plugin.sh`) — scaffolds a new plugin with all the right directories and files
-- **`/new-plugin` command** — create plugins directly from Claude Code
+- **`/new-plugin` skill** — create plugins directly from Claude Code
 - **Skill authoring guide** (`.claude/skills/create-skill/`) — reference for writing well-structured skills
 - **Contributing guide template** (`CONTRIBUTING.md`) — ready to customize for your team
 
@@ -25,11 +25,9 @@ your-marketplace/
 ├── .claude-plugin/
 │   └── marketplace.json       # Marketplace manifest
 ├── .claude/
-│   ├── commands/
-│   │   └── new-plugin.md      # /new-plugin command
 │   └── skills/
 │       ├── create-skill/      # Skill authoring guide
-│       └── new-plugin-skill/  # Natural language plugin creation
+│       └── new-plugin/        # Plugin creation skill
 ├── bin/
 │   └── generate-plugin.sh     # Plugin generator script
 ├── plugins/
