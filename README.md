@@ -1,6 +1,6 @@
 # Claude Code Plugin Marketplace Template
 
-A template for creating your own Claude Code plugin marketplace — a shared repository where teams can publish, discover, and install plugins.
+A shared repository where your team can publish, discover, and install Claude Code plugins — so everyone benefits from the best tools and workflows instead of reinventing them.
 
 ## Quick Start
 
@@ -9,14 +9,14 @@ A template for creating your own Claude Code plugin marketplace — a shared rep
 3. Update `.claude-plugin/marketplace.json` with your name, org, and description
 4. Start creating plugins with `/new-plugin`
 
+That's it — you've got a working marketplace. Your team can now install plugins directly from it.
+
 ## What's Included
 
-This template comes with built-in tooling to get you productive immediately:
-
-- **Plugin generator script** (`bin/generate-plugin.sh`) — scaffolds a new plugin with all the right directories and files
-- **`/new-plugin` skill** — create plugins directly from Claude Code
-- **Skill authoring guide** (`.claude/skills/create-skill/`) — reference for writing well-structured skills
-- **Contributing guide template** (`CONTRIBUTING.md`) — ready to customize for your team
+- **Plugin generator** (`bin/generate-plugin.sh`) — scaffolds a complete plugin in seconds with the right structure out of the box
+- **`/new-plugin` skill** — create plugins without leaving Claude Code
+- **Skill authoring guide** (`.claude/skills/create-skill/`) — everything you need to write well-structured, effective skills
+- **Contributing guide** (`CONTRIBUTING.md`) — a ready-to-customize template so contributors know how to add plugins
 
 ## Repository Structure
 
@@ -50,17 +50,18 @@ After creating your repository from this template, update the following:
 
 ## For Teams
 
-A plugin marketplace helps teams:
+Good tooling compounds. When one person builds a useful plugin, everyone on the team should be able to use it. A shared marketplace makes that happen — no Slack messages asking "hey can you share that script?", no copy-pasting between repos, no reinventing what someone already built last quarter.
 
-- **Reduce duplication** — share solutions across teams instead of reinventing them
-- **Spread best practices** — codify conventions in plugins everyone can use
-- **Continuous improvement** — tooling gets better as people contribute enhancements
-- **Low friction adoption** — easy for team members to discover and install useful tools
+As people contribute, the marketplace gets better. Conventions get codified. Best practices spread naturally. And new team members get productive faster because the tools are already there.
 
 ## Links
 
 - [Claude Code Plugins Documentation](https://docs.anthropic.com/en/docs/claude-code/plugins)
 - [Plugin Marketplace Guide](https://docs.anthropic.com/en/docs/claude-code/plugin-marketplaces)
+
+## Acknowledgments
+
+This marketplace was built using the [ichiba-template](https://github.com/nickmeehan/ichiba-template) by Nick Meehan, based on the [ichiba](https://github.com/nickmeehan/ichiba) project.
 
 ## License
 
