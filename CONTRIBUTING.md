@@ -1,24 +1,10 @@
 # Contributing Plugins
 
-## Status: Not Accepting Contributions Yet
-
-This marketplace is currently in its initial development phase and **we are not accepting external contributions at this time**. We plan to open up contributions in the future once we have established a solid foundation and initial set of example plugins.
-
-In the meantime, this document serves as:
-- Reference documentation for plugin structure and best practices
-- An example contribution guide that teams can use for their own internal marketplaces
-- Educational material for understanding how Claude Code plugins work
-
-**Watch this repository** for updates on when we'll begin accepting contributions.
+> **Note:** This is a template contribution guide. Customize it for your marketplace.
 
 ---
 
 ## Reference: Creating Plugins
-
-This section provides reference material for creating Claude Code plugins. While we're not accepting contributions yet, this information is useful for:
-- Teams building their own internal marketplaces
-- Learning how to structure plugins properly
-- Understanding the plugin development workflow
 
 ### Option 1: Using Anthropic's Plugin-Dev Toolkit (Recommended)
 
@@ -38,7 +24,7 @@ This section provides reference material for creating Claude Code plugins. While
 3. **Move your plugin to this repo's `plugins/` directory**:
 
 ```bash
-mv ~/.config/claude/plugins/your-plugin-name /path/to/ichiba/plugins/
+mv ~/.config/claude/plugins/your-plugin-name /path/to/your-marketplace/plugins/
 ```
 
 4. **Add an entry to `.claude-plugin/marketplace.json`**:
@@ -187,10 +173,10 @@ Consider creating separate plugins when:
 
 ## Questions?
 
-For questions about plugin development or this marketplace:
+For questions about plugin development:
 
 1. Check the [Claude Code Plugins Documentation](https://docs.anthropic.com/en/docs/claude-code/plugins)
-2. Open an issue in this repository for questions about the documentation or structure
+2. Open an issue in this repository
 
 ## Code of Conduct
 
@@ -199,7 +185,3 @@ For questions about plugin development or this marketplace:
 - Focus on solving real problems and improving developer experience
 - Share knowledge and help others learn
 - Write clear documentation so others can understand and adapt your work
-
-## Future License
-
-When we do begin accepting contributions, all contributed plugins will be available under the MIT License, free for anyone to use and modify. This helps the broader community learn from and build upon shared work.

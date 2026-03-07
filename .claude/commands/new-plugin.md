@@ -3,7 +3,7 @@ name: new-plugin
 description: Create a new blank Claude Code plugin with sane defaults
 ---
 
-You are being asked to create a new Claude Code plugin for the Ichiba marketplace.
+You are being asked to create a new Claude Code plugin for this marketplace.
 
 ## Task
 
@@ -14,14 +14,14 @@ Generate a new blank plugin by executing the plugin generator script located at 
 1. Ask the user for the following information if not already provided:
    - **Plugin name**: Must be lowercase with hyphens (e.g., "my-awesome-plugin")
    - **Plugin description**: A clear description of what the plugin does (minimum 20 characters)
-   - **Author name**: The plugin author (defaults to "nickmeehan")
+   - **Author name**: The plugin author (required)
 
 2. Run the generator script with the provided information:
    ```bash
-   ./bin/generate-plugin.sh "<plugin-name>" "<description>" "nickmeehan"
+   ./bin/generate-plugin.sh "<plugin-name>" "<description>" "<author>"
    ```
 
-   **IMPORTANT**: Always provide "nickmeehan" as the third argument (author) to avoid interactive prompts.
+   **IMPORTANT**: Always provide the author as the third argument to avoid interactive prompts.
 
 3. After the plugin is created, inform the user:
    - The plugin location
@@ -73,5 +73,5 @@ Create a plugin interactively:
 
 Create a plugin with all arguments:
 ```
-/new-plugin my-plugin "A helpful plugin that does something useful for development workflows" "John Doe"
+/new-plugin my-plugin "A helpful plugin that does something useful for development workflows" "your-name"
 ```
