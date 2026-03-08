@@ -373,6 +373,15 @@ main() {
         PLUGIN_AUTHOR="$3"
     fi
 
+    # Get optional components filter (comma-separated: commands,agents,skills,hooks,mcp)
+    COMPONENTS="$4"
+
+    # Helper: returns 0 (true) if the given component should be created
+    has_component() {
+        [ -z "$COMPONENTS" ] && return 0  # no filter = all components
+        echo ",$COMPONENTS," | grep -q ",$1,"
+    }
+
     # Set plugin directory
     PLUGIN_DIR="$PLUGINS_DIR/$PLUGIN_NAME"
 
@@ -387,10 +396,10 @@ main() {
 
     # Create plugin directories
     mkdir -p "$PLUGIN_DIR/.claude-plugin"
-    mkdir -p "$PLUGIN_DIR/commands"
-    mkdir -p "$PLUGIN_DIR/agents"
-    mkdir -p "$PLUGIN_DIR/skills"
-    mkdir -p "$PLUGIN_DIR/hooks"
+    if has_component "commands"; then mkdir -p "$PLUGIN_DIR/commands"; fi
+    if has_component "agents";   then mkdir -p "$PLUGIN_DIR/agents";   fi
+    if has_component "skills";   then mkdir -p "$PLUGIN_DIR/skills";   fi
+    if has_component "hooks";    then mkdir -p "$PLUGIN_DIR/hooks";    fi
 
     # Generate plugin files
     generate_plugin_json "$PLUGIN_NAME" "$PLUGIN_DESCRIPTION" "$PLUGIN_AUTHOR"
@@ -398,11 +407,11 @@ main() {
 
     # Generate template files for each component type
     print_info "Creating template files..."
-    generate_command_template
-    generate_agent_template
-    generate_skill_template
-    generate_hooks_template
-    generate_mcp_template
+    if has_component "commands"; then generate_command_template; fi
+    if has_component "agents";   then generate_agent_template;   fi
+    if has_component "skills";   then generate_skill_template;   fi
+    if has_component "hooks";    then generate_hooks_template;   fi
+    if has_component "mcp";      then generate_mcp_template;     fi
 
     print_success "Created plugin structure at $PLUGIN_DIR"
 
