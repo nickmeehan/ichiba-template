@@ -13,8 +13,10 @@ That's it — you've got a working marketplace. People can now install plugins d
 
 ## What's Included
 
-- **Plugin generator** (`bin/generate-plugin.sh`) — scaffolds a complete plugin in seconds with the right structure out of the box
 - **Anthropic `plugin-dev` and `skill-creator` plugins** — enabled in `.claude/settings.json` so you can author plugins and skills without leaving Claude Code
+- **Automated per-plugin releases** (`.github/workflows/release.yml`) — `semantic-release` bumps each plugin independently from Conventional Commits, tags it (`<plugin>-v<semver>`), and updates the marketplace manifest in one commit
+- **CI validation** (`.github/workflows/validate.yml`) — runs `claude plugin validate` on the marketplace and every plugin, lints commits and PR titles with `commitlint`, and rejects cross-plugin commits
+- **Pre-commit schema validation** (`bin/install-hooks.sh`) — auto-installed on SessionStart; runs `claude plugin validate` whenever a manifest is staged
 - **Contributing guide** (`CONTRIBUTING.md`) — a ready-to-customize template so contributors know how to add plugins
 
 ## Repository Structure
@@ -24,11 +26,21 @@ your-marketplace/
 ├── .claude-plugin/
 │   └── marketplace.json       # Marketplace manifest
 ├── .claude/
-│   └── settings.json          # Enables Anthropic's plugin-dev + skill-creator plugins
+│   └── settings.json          # Enabled plugins + SessionStart hooks
+├── .github/
+│   └── workflows/
+│       ├── release.yml        # Per-plugin semantic-release
+│       └── validate.yml       # Plugin + commit validation
 ├── bin/
-│   └── generate-plugin.sh     # Plugin generator script
+│   ├── install-hooks.sh       # Installs the pre-commit hook
+│   ├── check-plugin-scope.sh  # Rejects cross-plugin commits
+│   └── release-bump.sh        # Writes new versions during release
 ├── plugins/
 │   └── (your plugins go here)
+├── commitlint.config.js       # Conventional Commits + plugin-scope rules
+├── release.config.js          # semantic-release per-plugin config
+├── package.json               # pnpm dev deps (release/lint tooling only)
+├── CLAUDE.md                  # Conventions for contributors and Claude
 ├── CONTRIBUTING.md
 ├── LICENSE
 └── README.md
@@ -38,11 +50,12 @@ your-marketplace/
 
 After creating your repository from this template, update the following:
 
-- [ ] Update `marketplace.json` with your name and repository
+- [ ] Update `.claude-plugin/marketplace.json` with your name and description
 - [ ] Update this `README.md` for your marketplace
-- [ ] Update the default author in `bin/generate-plugin.sh`
 - [ ] Update `CONTRIBUTING.md` for your contribution policy
 - [ ] Update or replace the `LICENSE` for your needs
+- [ ] Add a `RELEASE_TOKEN` repo secret (fine-grained PAT with `contents: write`) so `release.yml` can push tags and bump commits back to `main`
+- [ ] Run `pnpm install` once locally to materialise `node_modules` for commitlint
 - [ ] Delete this checklist once done
 
 ## Why a Marketplace?

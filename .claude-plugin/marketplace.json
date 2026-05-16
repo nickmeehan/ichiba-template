@@ -1,8 +1,9 @@
 {
   "name": "my-marketplace",
+  "owner": {
+    "name": "your-name-or-org"
+  },
   "description": "A Claude Code plugin marketplace for sharing and distributing plugins",
   "version": "1.0.0",
-  "author": "your-name-or-org",
-  "repository": "your-org/your-marketplace",
   "plugins": []
 }

@@ -107,7 +107,7 @@ Your `plugins/your-plugin-name/.claude-plugin/plugin.json` should look like:
 
 ## Commit Message Guidelines
 
-We use [Conventional Commits](https://www.conventionalcommits.org/) for clear, consistent commit messages:
+We use [Conventional Commits](https://www.conventionalcommits.org/) for clear, consistent commit messages. **The scope drives automated releases**, so it matters:
 
 ```
 <type>(<scope>): <description>
@@ -117,14 +117,22 @@ We use [Conventional Commits](https://www.conventionalcommits.org/) for clear, c
 [optional footer(s)]
 ```
 
-### Types
+### Scope rules (enforced by CI)
 
-- **feat**: A new plugin or feature
-- **fix**: A bug fix in an existing plugin
-- **docs**: Documentation changes
-- **refactor**: Code changes that neither fix bugs nor add features
-- **test**: Adding or updating tests
-- **chore**: Maintenance tasks, dependency updates
+- For plugin changes, the scope **must** be the plugin's directory name under `plugins/`. A `feat(my-plugin): ...` commit triggers a release for `my-plugin`.
+- One commit must not touch more than one `plugins/<name>/` subtree — `bin/check-plugin-scope.sh` rejects cross-plugin commits. Split them.
+- Shared/infra changes (`bin/`, `.github/`, top-level docs) use unscoped types (`ci:`, `chore:`, `docs:`) and never trigger a release.
+- `deps` and `release` are also valid non-plugin scopes (extend `commitlint.config.js` to add more).
+
+### Types and release impact
+
+| Type | Release for the scoped plugin |
+| ---- | ----------------------------- |
+| `feat` | minor bump |
+| `fix` | patch bump |
+| `perf` | patch bump |
+| `refactor!` (or any `!` / `BREAKING CHANGE`) | major bump |
+| `docs`, `chore`, `test`, `ci`, `style`, `build` | no release |
 
 ### Examples
 
