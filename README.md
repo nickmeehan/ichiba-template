@@ -7,15 +7,14 @@ A template for creating your own Claude Code plugin marketplace — a shared rep
 1. Click **"Use this template"** on GitHub to create your own marketplace repository
 2. Name your new repository (e.g., `my-org/dev-plugins`)
 3. Update `.claude-plugin/marketplace.json` with your name, org, and description
-4. Start creating plugins with `/new-plugin`
+4. Start creating plugins with Anthropic's [`plugin-dev`](https://github.com/anthropics/claude-plugins-official) plugin (enabled out of the box)
 
 That's it — you've got a working marketplace. People can now install plugins directly from it.
 
 ## What's Included
 
 - **Plugin generator** (`bin/generate-plugin.sh`) — scaffolds a complete plugin in seconds with the right structure out of the box
-- **`/new-plugin` skill** — create plugins without leaving Claude Code
-- **Skill authoring guide** (`.claude/skills/create-skill/`) — everything you need to write well-structured, effective skills
+- **Anthropic `plugin-dev` and `skill-creator` plugins** — enabled in `.claude/settings.json` so you can author plugins and skills without leaving Claude Code
 - **Contributing guide** (`CONTRIBUTING.md`) — a ready-to-customize template so contributors know how to add plugins
 
 ## Repository Structure
@@ -25,9 +24,7 @@ your-marketplace/
 ├── .claude-plugin/
 │   └── marketplace.json       # Marketplace manifest
 ├── .claude/
-│   └── skills/
-│       ├── create-skill/      # Skill authoring guide
-│       └── new-plugin/        # Plugin creation skill
+│   └── settings.json          # Enables Anthropic's plugin-dev + skill-creator plugins
 ├── bin/
 │   └── generate-plugin.sh     # Plugin generator script
 ├── plugins/
